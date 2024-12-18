@@ -1,0 +1,29 @@
+{
+  "name": "Mistral MCP Server",
+  "version": "0.1.0",
+  "description": "Example MCP server for the Mistral AI platform",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "Mistral MCP Server": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
+  "dependencies": {
+    "@mistralai/mistralai": "^1.3.5",
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "dotenv": "^16.4.7",
+    "zod-to-json-schema": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "typescript": "^5.7.2"
+  }
+}
