@@ -15,6 +15,19 @@ This repository is part of a blog post by Speakeasy: [Building a Mistral MCP Ser
 
 To interact with the Mistral AI platform, you'll need an API key. You can get one by signing up at [mistral.ai](https://mistral.ai/).
 
+Set your API key as an environment variable. Create a copy of `.env.example` and rename it to `.env`.
+
+```bash
+cp .env.example .env
+open .env
+```
+
+Then update the `.env` file with your API key:
+
+```bash
+MISTRAL_API_KEY="YOUR_MISTRAL_API_KEY"
+```
+
 ## Tools
 
 This server provides two tools:

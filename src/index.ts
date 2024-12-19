@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+import path from "path";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
@@ -18,7 +18,7 @@ import {
 } from "./schema.js";
 
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({path: path.join(import.meta.dirname, "..", ".env")});
 
 const server = new Server(
   {
