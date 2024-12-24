@@ -90,7 +90,7 @@ To use this server with the Claude desktop app, add the following server config 
 
 ### Debugging
 
-Since MCP servers communicate over `stdio`, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
+Since MCP servers communicate through standard input/output streams (stdio), debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
 
 ```bash
 npm run inspector
