@@ -1,28 +1,28 @@
-# Mistral MCP Server Example
+# Mistral MCP server example
 
-This is a TypeScript-based MCP server that provides two tools to chat with Mistral. It is a basic example of how to create a server that can be used with the [Model Context Protocol (MCP)](https://modelcontextprotocol.io).
+This is a TypeScript-based MCP server that provides two tools for chatting with Mistral. It is a basic example of how to create a server that can be used with the [Model Context Protocol (MCP)](https://modelcontextprotocol.io).
 
-## Blog Post
+## Blog post
 
-This repository is part of a blog post by Speakeasy: [Building a Mistral MCP Server](https://speakeasy.com/post/mcp-server).
+This repository is part of a blog post by Speakeasy: [Building an MCP server for Mistral](https://speakeasy.com/post/mcp-server).
 
 ## Requirements
 
 - Node.js (tested on v20.17.10)
-- An [MCP client](https://modelcontextprotocol.io/clients) that supports **tools**. We recommend: [Claude Desktop](https://claude.ai/download) or the [Cline VSCode extension](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev).
+- An [MCP client](https://modelcontextprotocol.io/clients) that supports **tools**. We recommend the [Claude desktop application](https://claude.ai/download) or the [Cline VSCode extension](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev).
 
 ## Mistral API key
 
 To interact with the Mistral AI platform, you'll need an API key. You can get one by signing up at [mistral.ai](https://mistral.ai/).
 
-Set your API key as an environment variable. Create a copy of `.env.example` and rename it to `.env`.
+Set your API key as an environment variable. Create a copy of `.env.example` and rename it `.env`.
 
 ```bash
 cp .env.example .env
 open .env
 ```
 
-Then update the `.env` file with your API key:
+Now update the `.env` file with your Mistral API key:
 
 ```bash
 MISTRAL_API_KEY="YOUR_MISTRAL_API_KEY"
@@ -30,15 +30,18 @@ MISTRAL_API_KEY="YOUR_MISTRAL_API_KEY"
 
 ## Tools
 
-This server provides two tools:
+This server provides two tools.
 
-- `mistral_chat_text` - Chat with Mistral using text input
-  - Takes a model and an array of text inputs
-  - Returns a text response from Mistral
-- `mistral_chat_image` - Chat with Mistral using mixed text and image input
-  - Takes a model and an array of text and image inputs
-  - Images must be hosted on a public URL
-  - Returns a text response from Mistral
+For chatting with Mistral using text input, the `mistral_chat_text` tool:
+
+- Takes a model and an array of text inputs
+- Returns a text response from Mistral. 
+
+For chatting with Mistral using text and image input, the `mistral_chat_image` tool:
+
+- Takes a model and an array of text and image inputs
+- Only accepts images hosted on a public URL
+- Returns a text response from Mistral
 
 ## Development
 
@@ -62,10 +65,10 @@ npm run watch
 
 ## Installation
 
-To use with Claude Desktop, add the server config:
+To use this server with the Claude desktop app, add the following server config to your Claude config file:
 
-On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json` On
-Windows: `%APPDATA%/Claude/claude_desktop_config.json`
+- On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -87,16 +90,13 @@ Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ### Debugging
 
-Since MCP servers communicate over stdio, debugging can be challenging. We
-recommend using the
-[MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is
-available as a package script:
+Since MCP servers communicate through standard input/output streams (stdio), debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
 
 ```bash
 npm run inspector
 ```
 
-The Inspector will provide a URL to access debugging tools in your browser.
+The MCP Inspector will provide a URL for accessing debugging tools in your browser.
 
 ## License
 
